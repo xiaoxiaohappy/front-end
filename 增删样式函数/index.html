@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请点击这个中间的图片，之后点击出现的图片</title>
+    <style>
+        .picuture{
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .none_div{
+            display: none;
+        }
+        .block_div{
+            display: block;
+        }
+
+
+        html,body{
+            height:100%;
+            width: 100%;
+        }
+        /*垂直水平居中 缺一不可*/
+        .center{
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+<div id="LF" style="height: 300px;width: 200px;border: 1px solid #ccc;background-image: url(林峰.jpg);" class="picuture center"></div>
+<div id="HX" style="height: 100px;width: 50px;border: 1px solid #ccc;background-image: url(韩雪.jpg);" class="picuture center none_div"></div>
+
+<script>
+    // 判断是否有该样式，返回match的值，功能类似indexOf()
+    function hasClass(obj, cls) {
+        return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+    }
+    // 增加该样式
+    function addClass(obj, cls) {
+        if (!this.hasClass(obj, cls)) obj.className += " " + cls;
+    }
+    // 移除该样式
+    function removeClass(obj, cls) {
+        if (hasClass(obj, cls)) {
+            var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+            obj.className = obj.className.replace(reg, ' ');
+        }
+    }
+
+    var LF = document.getElementById("LF");
+    var HX = document.getElementById("HX");
+
+    LF.addEventListener("click", function(){
+        removeClass(HX, "none_div");
+        addClass(HX, "block_div");
+    });
+
+
+    HX.addEventListener("click", function(){
+        removeClass(HX, "block_div");
+        addClass(HX, "none_div");
+    });
+
+</script>
+</body>
+</html>
