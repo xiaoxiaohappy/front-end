@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环里不会影响dom生成，效率高</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        .center{
+            width:500px;
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            border:1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+    <ul id="target">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+
+
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    var ul = $("target");
+    var lists = ul.getElementsByTagName('li');
+    var str = '';
+
+    for(var i=lists.length-1;i>=0;i--){
+        str += '<li>'+lists[i].innerHTML+'</li>';
+    }
+
+    ul.innerHTML = str;
+</script>
+</body>
+</html>

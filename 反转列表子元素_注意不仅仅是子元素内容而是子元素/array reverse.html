@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array的反转函数reverse,思路加分，同时性能较高</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        .center{
+            width:500px;
+            position: relative;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            border:1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+    <ul id="target">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+
+
+<script>
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    var ul = $("target");
+    var children = Array.prototype.slice.call(ul.getElementsByTagName("li"),0);
+    var len = children.length;
+    var str = '';
+
+//    数组的反转,原生的数组反转方法reverse()
+    children.reverse();
+    console.log(children)
+
+    for(var i=0; i<len; i++){
+//        注意+=之间不能有空格！！！！！！！
+        str += children[i].outerHTML;
+    }
+
+    ul.innerHTML = str;
+</script>
+</body>
+</html>
