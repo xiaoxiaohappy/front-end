@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用spilt，但是有失优雅，若url中有#则会出错</title>
+</head>
+<body>
+<script>
+    var url="https://www.baidu.com/s?wd=%E5%8F%A4%E9%A3%8E&rsv_spt=1&rsv_iqid=0x9203ac1e000010ae&issp=1&f=8&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_sug3=12&rsv_sug1=9&rsv_sug7=100&rsv_sug2=0&inputT=7346&rsv_sug4=10683";
+    function getQuery(key) {
+        var results ={};
+        if(url.indexOf("?")!=-1){
+            var str=url.substr(1);
+            strs=str.split("&");
+//            console.log(strs)
+            for(var i=0;i<strs.length;i++){
+                var spiltArr=strs[i].split("=");
+                results[spiltArr[0]]=spiltArr[1];
+//                console.log(spiltArr[0])
+            }
+        }
+//        console.log(results["ie"])
+//        console.log(key)
+        return results[key];
+    }
+    console.log(getQuery("ie"));
+</script>
+</body>
+</html>
