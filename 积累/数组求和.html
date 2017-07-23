@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组求和</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3]
+
+
+////    法一
+//    //递归
+//    function sum(arr) {
+//        if(arr.length==0)
+//            return 0;
+//        else if(arr.length==1)
+//            return arr[0];
+//        else
+//            return arr[0]+sum(arr.slice(1));
+//    }
+//    alert(sum(arr))
+
+
+
+////    法二
+////    函数式编程 使用归并方法reduce
+//    var sum =  arr.reduce(function (prev,cur,index,array) {
+//        return prev+cur;
+//    })
+//    alert(sum)
+
+
+////    法三
+////    foreach遍历
+//    var s=0;
+//        arr.forEach(function (item,index,arr) {
+//            s += item;
+//        });
+//    alert(s);
+
+
+
+//    法四
+//    eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。
+    var s=0;
+    s=eval(arr.join("+"))
+    alert(s);
+</script>
+</body>
+</html>

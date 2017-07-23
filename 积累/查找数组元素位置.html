@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查找数组元素位置</title>
+</head>
+<body>
+<script>
+    var arr = ['a','b','c'];
+    var item ='a';
+
+
+
+
+//    法一
+    alert(arr.indexOf(item))
+
+
+
+//法二
+    function findIndex(arr,item) {
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==item)
+                console.log(i);
+        }
+    }
+    findIndex(arr,item);
+
+</script>
+</body>
+</html>

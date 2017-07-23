@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> arr 末尾添加元素，不要直接修改数组 arr</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,5];
+    var item = 6;
+    var s=[];
+    
+////    法一
+//    function add1(arr,item) {
+////               s=arr;错误，因为数组是引用类型，此时改变s即同时改变arr,这样做就改变了原数组
+//
+//        arr.map(function (item,index,arr) {
+//            s.push(item);
+//        })
+//        s.push(item);
+//    }
+//    add1(arr,item);
+//    alert(s)
+
+
+
+
+////    法二
+////    使用slice浅拷贝  slice不改变原数组
+//        function add2(arr,item) {
+//    //               s=arr;错误，因为数组是引用类型，此时改变s即同时改变arr,这样做就改变了原数组
+//
+//            s = arr.slice(0)
+//
+//            s.push(item);
+//        }
+//        add2(arr,item);
+//        alert(s)
+
+
+
+//    法三
+//    使用concat  concat不改变原数组
+    function add3(arr,item) {
+        s=arr.concat(item)
+    }
+    add3(arr,item);
+    alert(s)
+</script>
+</body>
+</html>

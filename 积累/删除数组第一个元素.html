@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除数组 arr 第一个元素。不要直接修改数组 arr，结果返回新的数组</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,5];
+    var s=[];
+
+
+////    法一
+////    利用slice  slice不改变原数组
+//    function del1(arr) {
+//        s=arr.slice(1)
+//    }
+//    del1(arr)
+//    alert(s)
+//
+
+
+
+    //    法二
+    //    利用shift  shift改变原数组,所以要事先赋值给新数组s，在新数组s上进行shift操作
+    function del1(arr) {
+        arr.map(function (item,index,arr) {
+            s.push(item)
+        })
+       s.shift()
+    }
+    del1(arr)
+    alert(s)
+
+
+
+</script>
+</body>
+</html>

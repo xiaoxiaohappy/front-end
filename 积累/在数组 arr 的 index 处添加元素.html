@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在数组 arr 的 index 处添加元素,不改变原数组</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,5];
+    var index = 2;
+    var item = 10;
+    var s=[];
+
+
+////    法一
+////    slice、concat 都不改变原数组
+//    function add1(item,index,arr) {
+//        s=arr.slice(0,index).concat(item,arr.slice(index))
+//    }
+//    add1(item,index,arr)
+//    alert(s)
+
+
+
+////    法二
+////    slice不改变原数组 来赋值新数组s
+////    splice改变原数组，所以要在新数组上操作
+//    function add2(item,index,arr) {
+//        s=arr.slice()
+//        s.splice(index,0,item)
+//    }
+//    add2(item,index,arr);
+//    alert(s)
+
+
+    //    法三
+    //    concat不改变原数组 来赋值新数组s
+    //    splice改变原数组，所以要在新数组上操作
+    function add2(item,index,arr) {
+        s=arr.concat()
+        s.splice(index,0,item)
+    }
+    add2(item,index,arr);
+    alert(s)
+</script>
+
+</body>
+</html>
