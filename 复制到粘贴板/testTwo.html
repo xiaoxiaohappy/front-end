@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>clipboard示例</title>
+    <script src="clipboard.min.js"></script>
+</head>
+<body>
+<!--data-clipboard-text属性的值将会被复制-->
+    <button id="btn">点击复制</button>
+</div>
+
+<script>
+
+    var btn = document.getElementById('btn');
+    var clipboard = new Clipboard(btn, {
+        // 点击copy按钮，直接通过text直接返回复印的内容
+        text: function() {
+            return 'to be or not to be11111';
+        }
+    });
+
+
+</script>
+</body>
+</html>
