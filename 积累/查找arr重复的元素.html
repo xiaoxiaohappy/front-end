@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数字arr中查找重复元素</title>
+</head>
+<body>
+<script>
+//    将传入的数组arr中的每一个元素value当作另外一个新数组b的key，然后遍历arr去访问b[value]，若b[value]不存在，则将b[value]设置为1，
+// 若b[value]存在，则将其加1。可以想象，若arr中数组没有重复的元素，则b数组中所有元素均为1；
+// 若arr数组中存在重复的元素，则在第二次访问该b[value]时，b[value]会加1，其值就为2了。
+// 最后遍历b数组，将其值大于1的元素的key存入另一个数组a中，就得到了arr中重复的元素
+    function search(arr) {
+        var a=[],b=[];
+        for(var i=0;i<arr.length;i++){
+            if(!b[arr[i]]){
+                b[arr[i]]=1
+                continue;
+            }
+            else
+                b[arr[i]]++;
+        }
+        for(var j=0;j<b.length;j++){
+            if(b[j]>1)
+                a.push(j)
+        }
+
+        return a;
+    }
+
+    var arr1=[2,3,3];
+    console.log(search(arr1));
+Array.prototype.quchong = function(){
+    var res = [];
+    var json = {};
+    for(var i = 0; i < this.length; i++){
+        if(!json[this[i]]){
+            res.push(this[i]);
+            json[this[i]] = 1;
+        }
+        else {
+            json[this[i]]++;
+        }
+    }
+    console.log(json)
+    return res;
+}
+var arr = [112,112,34,'你好',112,112,34,'你好','str','str1'];
+console.log(arr.quchong());
+
+
+
+</script>
+
+</body>
+</html>

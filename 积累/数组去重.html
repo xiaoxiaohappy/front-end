@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组去重</title>
+</head>
+<body>
+<script>
+    Array.prototype.quchong=function () {
+        var res=[];
+        json={};
+        for(var i=0;i<this.length;i++){
+            if(!json[this[i]]){
+                res.push(this[i]);
+                json[this[i]]=1;
+            }
+            else {
+                json[this[i]]++;
+            }
+        }
+        console.log(json);
+        return res;
+    }
+    var arr = [112,112,34,'你好',112,112,34,'你好','str','str1'];
+    console.log(arr.quchong())
+
+
+
+
+//    set数据结构  ns是Set结构的数据，类似于数组，但是其中每一项均唯一
+    let s=[1,2,3,4,5,4,3,2];
+    let ns=new Set();
+    s.forEach(x=>ns.add(x));
+    console.log(ns)
+</script>
+</body>
+</html>
