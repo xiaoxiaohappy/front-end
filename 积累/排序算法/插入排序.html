@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入排序</title>
+</head>
+<body>
+<!--从小到大-->
+<script>
+    function charu(arr) {
+        let i,j;
+        for(i=1;i<arr.length;i++){
+            let t = arr[i];
+
+            for(j=i;j>=0;j--){
+                if(arr[j-1]>t){
+                    arr[j]=arr[j-1];
+                }
+                else {
+                    arr[j]=t;
+                    break;  //break是个坑  这遍里面的循环完毕了就必须break 否则结果出bug
+                }
+            }
+        }
+    }
+    var arr=[12,3,5,6,8,3,2,1];
+    charu(arr);
+    alert(arr);
+</script>
+</body>
+</html>
