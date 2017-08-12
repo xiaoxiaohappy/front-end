@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>归并排序</title>
+</head>
+<body>
+<script>
+    function merge(leftArr,rightArr) {
+        var temp=[]
+
+
+
+        while (leftArr.length && rightArr.length){
+            debugger
+            if(leftArr[0]<rightArr[0]){
+                temp.push(leftArr.shift())
+            }
+            else {
+                temp.push(rightArr.shift())
+            }
+        }
+
+        return temp.concat(leftArr,rightArr);//最后这句话保证了leftArr和rightArr中有一个还剩的情况（最多只有一个还剩下项）
+    }
+
+
+
+    function guibing(arr) {
+        let len =arr.length;
+        if(len<=1){
+            return arr;
+        }
+
+        mid=Math.floor(len/2);
+        leftArr=arr.slice(0,mid),rightArr=arr.slice(mid);
+
+
+        return merge(guibing(leftArr),guibing(rightArr));
+
+    }
+
+    var arr=[2,1,4,3];
+    var res = guibing(arr);
+    alert(res);
+
+
+
+</script>
+</body>
+</html>
