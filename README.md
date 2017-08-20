@@ -4,5 +4,8 @@
 
 [请点击(轮播图)](http://www.yangxiaoxiao.site/front-end/轮播图/index.html)
 
+[复制内容到粘贴板上](http://www.yangxiaoxiao.site/front-end/轮播图/index.html)
 
 [其他前端积累](https://github.com/xiaoxiaohappy/front-end/tree/master/%E7%A7%AF%E7%B4%AF)
+
+

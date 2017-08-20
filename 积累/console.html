@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var name="abc"
+    var person={
+        name:"cba",
+        g:function () {
+            return this.name
+        }
+    }
+    console.log(person.g())
+    var p1=person.g;
+    console.log(p1)
+    var p2=new p1()
+    console.log(p2.name)
+
+
+
+    var a=0
+    function A() {
+        this.a=1;
+        setTimeout(function () {
+            this.a=2
+            try{
+                this.b='b'
+                throw ''
+            }
+            catch(e){
+                this.b='bb'
+            }
+        },0)
+        this.b='bbb'
+    }
+    var aa=new A()
+    setTimeout(function () {
+        console.log(aa.a)
+        console.log(window.a)
+        console.log(aa.b)
+        console.log(window.b)
+    })
+
+
+    var v='cba';
+    (function(){
+        var v='abc'
+        function A() {
+            var v='a'
+            this.g=function () {
+                console.log(v)
+            }
+        }
+        function B() {
+            var v='b'
+            A.call(this)
+        }
+        var b=new B()
+        b.g()
+    }())
+</script>
+</body>
+</html>
