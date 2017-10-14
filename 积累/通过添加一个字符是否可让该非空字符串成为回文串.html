@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回文串</title>
+</head>
+<body>
+<script>
+    var str1="abcba"
+    var str2="abb"
+    var str3="abc"
+    function toHWC(str) {
+        var res=0;
+        var j=str.length-1;
+        var i=0;
+        while(i<j){
+            if(str[i]==str[j]){
+                i++;
+                j--;
+            }
+            else{
+                if(str[i+1]==str[j]||str[i]==str[j-1]){
+                    str[i+1]==str[j]?i++:j--;
+                    res++;
+                }
+                else{
+                    res=2;
+                    break;
+                }
+            }
+        }
+//        debugger
+        switch (res){
+
+            case 0:
+                console.log("str本来即为回文串")
+                break;
+            case 1:
+                console.log("str可以通过添加一个字符成为回文串")
+                break;
+            default:
+                console.log("str不可以通过添加一个字符成为回文串")
+                break;
+
+        }
+    }
+    toHWC(str1)
+    toHWC(str2)
+    toHWC(str3)
+</script>
+</body>
+</html>
