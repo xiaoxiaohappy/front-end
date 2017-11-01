@@ -24,7 +24,7 @@
 
 <img src="img/4.jpg">
 
-# 5.快速排序()
+# 5.快速排序(时间复杂度O(nlog(n)))
 
 <img src="img/5.jpg">
 
